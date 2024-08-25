@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bayberry Media</title>
+    <link rel="shortcut icon" type="image/x-icon" href="tabIcon.ico" />
+    <meta name="description" >
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+    <!-- <header class="main-header">
+        <div class="header-logo">
+            <img src="content/Bayberry Media (White Logo) Transparent.png">
+        </div>
+    </header> -->
+
+
+    <div class="video-container">
+        <video controls autoplay loop muted>
+            <source src="content/Bayberry Media Website Main Page Video.mp4" type="video/mp4">
+        </video>
+        <div class="video-logo">
+            <img src="content/Bayberry Media (White Logo) Transparent.png">
+        </div>
+    
+        <div class="buttons-container">
+            <button onclick="scrollToSection('Portfolio')">Portfolio</button>
+            <button onclick="scrollToSection('About')">About</button>
+            <button onclick="scrollToSection('Booking')">Bookings</button>
+        </div>
+    </div>
+
+    <div class="main-container hidden" id="Portfolio">
+
+        <!-- Photo Slideshow -->
+        <div class="container">
+            <div class="photo-slideshow-container">
+                <button class="prev prev-photo">❮</button>
+                <button class="next next-photo">❯</button>
+            </div>
+            <div class="additional-photo-rectangle">
+                <a href="view-all-photos.html" class="view-more-button">View All</a>
+            </div>
+        </div>
+
+        <!-- Video Slideshow -->
+        <div class="container">
+            <div class="video-slideshow-container">
+                <!-- Video slides will be dynamically added here -->
+                <button class="prev prev-video">❮</button>
+                <button class="next next-video">❯</button>
+            </div>
+            <div class="additional-video-rectangle">
+                <a href="view-all-videos.html" class="view-more-button">View All</a> 
+            </div>
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <section class="about-me-section hidden" id="About">
+        <div class="about-me-background">
+            <div class="about-me-content">
+                <!-- Left Side Text -->
+                <div class="about-me-text">
+                    <h2>About Bayberry Media</h2>
+                    <p>
+                        Welcome to Bayberry Media! I'm a passionate car photographer who brings high-performance vehicles to life through the lens. With years of experience capturing the beauty and precision of automobiles, my goal is to showcase every detail, from sleek lines to roaring engines. Whether it’s an exotic supercar or a vintage classic, I’m committed to delivering stunning visuals that resonate with car enthusiasts and brands alike.
+                    </p>
+                    <p>
+                        At Bayberry Media, I believe that every car has a story to tell, and my work is focused on revealing that story in the most dynamic way possible. Let's capture the essence of your automotive passion together.
+                    </p>
+                </div>
+                <!-- Right Side Images -->
+                <div class="about-me-images">
+                    <img src="content/aboutMe1.png" alt="Car Photographer at Work">
+                    <img src="content/aboutMe2.png" alt="Car Photography Gear">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Calendly inline widget begin -->
+    <div class="calendly-inline-widget hidden" data-url="https://calendly.com/shant-zargarian/30min?hide_gdpr_banner=1&background_color=2c2f33&text_color=ffffff&primary_color=fbfcff" style="min-width:320px;height:700px;" id="Booking" ></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <!-- Calendly inline widget end -->
+
+    <!-- Footer -->
+    <div class="footer">
+        <a href="https://www.instagram.com/bayberry.media/" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@bayberrymedia" target="_blank" class="social-icon">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCyw4fFPLfGCqSn99WfcYd4w" target="_blank" class="social-icon">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+
+</body>
+</html>

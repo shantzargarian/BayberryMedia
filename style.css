@@ -1,0 +1,431 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background-color: #3e4043;
+}
+
+.main-header { 
+    background-color: #24252A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header-logo img{
+    height: auto;
+    width: 10%;
+    margin-left: 20px;
+}
+
+.video-container {
+    opacity: 1 !important;
+    position: relative !important;
+    width: 100% !important;
+    animation: fade-in 4s !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.video-logo {
+    position: absolute;
+    z-index: 2; /* Ensure the logo stays on top of the video */
+    left: 10%;
+    top: -10%;
+    animation: fade-in 5s;
+}
+
+.video-logo img {
+    width: 90% !important;
+    height: auto !important;
+}
+
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 42%; /* Adjust this value to position buttons below the logo */
+    left: 50%;
+    transform: translate(-50%, 0); /* Center buttons horizontally */
+    z-index: 800; /* Ensure buttons are above the video and logo */
+    animation: fade-in 5s;
+}
+
+.buttons-container button {
+    padding: 10px 20px;
+    background-color: #6b778d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 100; /* Ensure each button is above the video */
+}
+
+.buttons-container button:hover {
+    background-color: #2c2f33;
+}
+
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.video-container video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .3);
+    padding: 10px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5%;
+}
+
+/* Container settings */
+.container {
+    position: relative;
+    width: 45%; /* Adjust the container width */
+    margin-left: 5%;
+    margin-top: 0;
+}
+
+/* General slideshow settings */
+.photo-slideshow-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px; /* Adjust padding for photos */
+    margin-top: 21%; /* Add margin to position the photos lower */
+    left: 5%;
+}
+
+
+.video-slideshow-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    padding-top: 2%;
+    padding-left: 15%;
+    left: 6.5%;
+}
+
+/* Image and video styling */
+.photo-slideshow-container img {
+    width: 95%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.video-slideshow-container video {
+    width: 60%; 
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Additional rectangle for styling */
+.additional-photo-rectangle {
+    position: absolute;
+    top:18%; 
+    left: 5%; 
+    width: 98%; 
+    height: 70%;
+    background-color: #2c2f33;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.additional-video-rectangle {
+    position: absolute;
+    top: -1%; 
+    left: 13.5%;
+    width: 63%;
+    height: 109%; 
+    background-color: #2c2f33;
+    border-radius: 15px;
+    z-index: 1;
+    left: 20%;
+}
+
+/* Slide control settings */
+.slide {
+    display: none; 
+    width: 100%;
+}
+
+.active-slide {
+    display: block; /* Only display the active slide */
+}
+
+
+
+
+
+
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center the buttons vertically */
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    z-index: 3;
+}
+
+.prev-photo {
+    left: 2%;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev-video {
+    left:13.5%;
+    border-radius: 3px 0 0 3px;
+}
+
+.next-photo {
+    right: 7%;
+    border-radius: 0 3px 3px 0;
+}
+
+.next-video {
+    right: 35.25%;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.view-more-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    background-color: #4a4d52;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-button:hover {
+    background-color: #5a5d62;
+}
+
+
+
+
+
+
+/* View All Pages */
+/* General gallery styling */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 10%;
+}
+
+.gallery-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Ensure the footer stays at the bottom */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c2f33;
+    color: white;
+}
+
+/* Additional responsive styling as needed */
+@media (max-width: 768px) {
+    .gallery-photo {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 10%; 
+}
+
+.gallery-video {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #2c2f33;
+}
+
+.gallery-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* About Me Section */
+.about-me-section {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
+    padding-top: 9%;
+}
+
+.about-me-background {
+    position: relative;
+    background-color: #2c2f33;
+    padding: 40px;
+    border-radius: 15px;
+    width: 80%;
+    z-index: 1;
+}
+
+.about-me-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.about-me-text {
+    flex: 1;
+    color: white;
+    max-width: 50%;
+    margin-right: 20px;
+}
+
+.about-me-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-me-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-me-images {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about-me-images img {
+    width: 48%; /* Adjust width as needed */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #24252A;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #3a3d42;
+}
+
+.social-icon i {
+    vertical-align: middle;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-50px); /* Move down initially */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+}
