@@ -2,10 +2,16 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Arial", sans-serif;
+    overflow-x: hidden; 
+    width: 100vw; 
 }
 
 body {
-    background-color: #3e4043;
+    /* background-color: #3e4043; */
+    background-image: url("content/Bayberry Media Website Background.png");
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Keeps the image centered */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
 .main-header { 
@@ -60,9 +66,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 250px;
     position: absolute;
-    top: 42%; /* Adjust this value to position buttons below the logo */
+    top: 47%; /* Adjust this value to position buttons below the logo */
     left: 50%;
     transform: translate(-50%, 0); /* Center buttons horizontally */
     z-index: 800; /* Ensure buttons are above the video and logo */
@@ -71,17 +77,20 @@ body {
 
 .buttons-container button {
     padding: 10px 20px;
-    background-color: #6b778d;
+    background-color: transparent;
     color: white;
-    border: none;
+    border: 3px solid white;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 35px;
     z-index: 100; /* Ensure each button is above the video */
+    transition: border-width 0.1s ease; /* Smooth transition for border size */
 }
 
 .buttons-container button:hover {
     background-color: #2c2f33;
+    border-width: 10px;
+
 }
 
 
@@ -93,7 +102,7 @@ body {
 .video-container video {
     position: relative;
     top: 0;
-    left: 0;
+    left: 0%;
     width: 100%;
     height: 100%;
     z-index: 0;
@@ -117,7 +126,7 @@ body {
     position: relative;
     width: 45%; /* Adjust the container width */
     margin-left: 5%;
-    margin-top: 0;
+    margin-top: 10%;
 }
 
 /* General slideshow settings */
@@ -168,10 +177,10 @@ body {
 /* Additional rectangle for styling */
 .additional-photo-rectangle {
     position: absolute;
-    top:18%; 
-    left: 5%; 
+    top: 18%; 
+    left: 4.5%; 
     width: 98%; 
-    height: 70%;
+    height: 68%;
     background-color: #2c2f33;
     border-radius: 15px;
     z-index: 1;
@@ -180,7 +189,7 @@ body {
 .additional-video-rectangle {
     position: absolute;
     top: -1%; 
-    left: 13.5%;
+    left: 10%;
     width: 63%;
     height: 109%; 
     background-color: #2c2f33;
@@ -190,14 +199,32 @@ body {
 }
 
 /* Slide control settings */
+/* General slide settings */
 .slide {
-    display: none; 
-    width: 100%;
+    display: none;
+    width: 100%; /* Make the width relative to the parent container */
+    height: auto; /* Allow the height to adjust based on the content */
+    overflow: hidden; /* Ensure no content overflows the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Center the slide container */
+    position: relative; /* Ensure it stays relative to the parent */
 }
 
 .active-slide {
-    display: block; /* Only display the active slide */
+    display: flex;
 }
+
+/* Image and video styles */
+.slide img,
+.slide video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
 
 
 
@@ -271,17 +298,19 @@ body {
 /* View All Pages */
 /* General gallery styling */
 .photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    justify-content: space-around; /* Ensure even spacing */
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
     margin-top: 10%;
 }
 
 .gallery-photo {
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-width: 400px;
     border-radius: 10px;
+    margin: 10px;
     object-fit: cover;
 }
 
@@ -293,7 +322,6 @@ body {
     color: white;
 }
 
-/* Additional responsive styling as needed */
 @media (max-width: 768px) {
     .gallery-photo {
         width: 100%;
@@ -323,26 +351,17 @@ body {
     object-fit: cover;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* About Me Section */
 .about-me-section {
     padding: 50px 0;
+    margin-top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 40px;
-    padding-top: 9%;
+    height: 50%;
+    padding-bottom: 10%;
+    z-index: 0;
 }
 
 .about-me-background {
@@ -388,7 +407,7 @@ body {
 }
 
 .about-me-images img {
-    width: 48%; /* Adjust width as needed */
+    width: 48%;
     border-radius: 10px;
     object-fit: cover;
 }

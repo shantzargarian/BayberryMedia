@@ -31,9 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Generate video slides
-    videos.forEach((src, index) => {
+    videos.forEach((src) => {
         const slide = document.createElement('div');
         slide.classList.add('slide');
+        // document.getElementById("slide").style.width = "50%";
         const video = document.createElement('video');
         video.controls = true;
         const source = document.createElement('source');
@@ -90,10 +91,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.prev-video').addEventListener('click', () => plusSlides(-1, 'video'));
     document.querySelector('.next-video').addEventListener('click', () => plusSlides(1, 'video'));
 
+
+    const totalGalleryPhotos = 26;
     // Handling the View All Photos and Videos Pages
     if (document.querySelector('.photo-gallery')) {
         const photoGallery = document.querySelector('.photo-gallery');
-        for (let i = 1; i <= totalPhotos; i++) {
+        for (let i = 1; i <= totalGalleryPhotos; i++) {
             const img = document.createElement('img');
             img.src = `${photoPath}image${i}.jpg`;
             img.alt = `Photo ${i}`;
@@ -120,6 +123,19 @@ document.addEventListener("DOMContentLoaded", function () {
             videoGallery.appendChild(videoContainer);
         }
     }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show'); 
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
 });
 
 function scrollToSection(sectionId) {
@@ -128,18 +144,3 @@ function scrollToSection(sectionId) {
         element.scrollIntoView({ behavior: 'smooth' });
     }
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target); // Stop observing once it's visible
-            }
-        });
-    });
-
-    // Target all elements with the 'hidden' class
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el) => observer.observe(el));
-});
