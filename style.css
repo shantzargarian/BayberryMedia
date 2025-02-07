@@ -31,12 +31,14 @@ body {
     display: flex;
     align-items: center;
     height: 100%;
+    padding-left: 20px;
 }
 
 .header-logo img{
+    display: flex;
     height: auto;
     width: 10%;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .video-container {
@@ -44,20 +46,20 @@ body {
     position: relative !important;
     width: 100% !important;
     animation: fade-in 4s !important;
-    display: flex !important;
+    display: relative !important;
     justify-content: center !important;
 }
 
 .video-logo {
-    position: absolute;
-    z-index: 2; /* Ensure the logo stays on top of the video */
-    left: 10%;
-    top: -10%;
+    position: absolute; /* Ensures logo stays positioned over video */
+    z-index: 2; /* Keeps it above the video */
+    left: 50%; /* Centers it horizontally */
+    top: 10%; /* Adjust as needed */
+    transform: translateX(-50%); /* Ensures proper centering */
     animation: fade-in 5s;
 }
-
 .video-logo img {
-    width: 90% !important;
+    width: 100% !important;
     height: auto !important;
 }
 
