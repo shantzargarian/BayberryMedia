@@ -90,9 +90,9 @@ body {
 }
 
 .buttons-container button:hover {
-    background-color: #2c2f33;
     border-width: 10px;
-
+    border-radius:10px;
+    font-size: 45;
 }
 
 
