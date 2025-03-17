@@ -3,10 +3,9 @@
 
 <head>
     <title>Bayberry Media</title>
-    <link rel="shortcut icon" type="image/x-icon" href="tabIcon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="BayberryMedia.ico" />
     <meta name="description" >
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="scripts.js"></script>
 </head>
 
@@ -14,7 +13,7 @@
 
     <div class="video-container">
         <video controls autoplay loop muted>
-            <source src="content/Bayberry Media Website Main Page Video with Bottom Vignette.mp4" type="video/mp4">
+            <source src="content/MainPageVideoWVignette.mp4" type="video/mp4">
         </video>
         <div class="video-logo">
             <img src="content/Bayberry Media (White Logo) Transparent.png">
@@ -31,7 +30,7 @@
 
         <!-- Photo Slideshow -->
         <div class="container">
-            <div class="photo-slideshow-container" id="Portfolio">
+            <div class="photo-slideshow-container " id="Portfolio">
                 <button class="prev prev-photo">❮</button>
                 <button class="next next-photo">❯</button>
             </div>
@@ -76,11 +75,35 @@
         </div>
     </section>
 
-
-    <!-- Calendly inline widget begin -->
-    <!---<div id="Booking" class="calendly-inline-widget" data-url="https://calendly.com/bayberryedits/schedule-shoot?background_color=2c2f33&text_color=ffffff&primary_color=ffffff" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    Calendly inline widget end --> 
+    <section class="booking-section hidden" id="Booking">
+        <div class="booking-background">
+            <div class="booking-container">
+                <div class="booking-content">
+                    <div class="booking-text">
+                        <h2>Book a Shoot</h2>
+                        <p>Schedule your photography session with Bayberry Media. Fill in the details below and we will get in touch with you.</p>
+                    </div>
+                    <div class="booking-form">
+                        <form id="bookingForm">
+                            <label for="name">Your Full Name:</label>
+                            <input type="text" id="name" required>
+                            
+                            <label for="contact">Enter how you want to be contacted:</label>
+                            <input type="text" id="contact" required>
+                            
+                            <label for="date">What date would you like a shoot?</label>
+                            <input type="date" id="date" required>
+                            
+                            <label for="details">Please give a brief explanation of what kind of shoot you are looking for:</label>
+                            <textarea id="details" rows="4" required></textarea>
+                            
+                            <button type="submit" class="styled-button">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <div class="footer">

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Photo Slideshow
     const photoSlideshowContainer = document.querySelector('.photo-slideshow-container');
     const photoPath = "content/Photos/";
-    const totalPhotos = 22; // Number of photos
+    const totalPhotos = 21; // Number of photos
     const photos = [];
 
     for (let i = 1; i <= totalPhotos; i++) {
@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Video Slideshow
     const videoSlideshowContainer = document.querySelector('.video-slideshow-container');
     const videoPath = "content/Videos/";
-    const totalVideos = 15; // Number of videos
+    const totalVideos = 20; // Number of videos
     const videos = [];
 
     for (let i = 1; i <= totalVideos; i++) {
-        videos.push(`${videoPath}video${i}.mov`);
+        videos.push(`${videoPath}video${i}.mp4`);
     }
 
     // Generate video slides
@@ -136,6 +136,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
+
+
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        let name = document.getElementById("name").value;
+        let contact = document.getElementById("contact").value;
+        let dateValue = document.getElementById("date").value;
+        let details = document.getElementById("details").value;
+        
+        let dateObj = new Date(dateValue);
+        let year = dateObj.getFullYear();
+        let month = dateObj.getMonth() + 1; // JS months are 0-based
+        let day = dateObj.getDate();
+    
+        let googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSeD7TMXGDoQPvF8X4W1lKZ9YUqSyWWI8j_ZaNHysKAMvdrT7Q/formResponse";
+        
+        let formData = new FormData();
+        formData.append('entry.860149035', name);
+        formData.append('entry.822860986', contact);
+        formData.append('entry.1153792034_year', year);
+        formData.append('entry.1153792034_month', month);
+        formData.append('entry.1153792034_day', day); 
+        formData.append('entry.1550844614', details);
+        
+        fetch(googleFormURL, {
+            method: "POST",
+            mode: "no-cors",
+            body: formData
+        })
+        .then(() => {
+            alert("Your booking has been submitted!");
+            document.getElementById("bookingForm").reset();
+        })
+        .catch((error) => console.error("Error:", error));
+    });
 });
 
 function scrollToSection(sectionId) {
