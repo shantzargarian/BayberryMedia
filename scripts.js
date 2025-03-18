@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     videos.forEach((src) => {
         const slide = document.createElement('div');
         slide.classList.add('slide');
-        // document.getElementById("slide").style.width = "50%";
         const video = document.createElement('video');
         video.controls = true;
         const source = document.createElement('source');
