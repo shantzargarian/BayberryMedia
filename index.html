@@ -12,44 +12,48 @@
 <body>
 
     <div class="video-container">
-        <video controls autoplay loop muted preload="auto" controlsList="nodownload">
-            <source src="content/BayberryMediaWebsiteMainPageVideoBottomVignette.mp4" type="video/mp4">
+        <video controls autoplay loop muted preload="metadata" controlsList="nodownload">
+          <source src="content/BayberryMediaWebsiteMainPageVideoBottomVignette.mp4" type="video/mp4" />
         </video>
+      
         <div class="video-logo">
-            <img src="content/Bayberry Media (White Logo) Transparent.png">
+          <img src="content/Bayberry Media (White Logo) Transparent.png" alt="Bayberry Media logo" />
         </div>
-    
+      
         <div class="buttons-container">
-            <button onclick="scrollToSection('Portfolio')">Portfolio</button>
-            <button onclick="scrollToSection('About')">About</button>
-            <button onclick="scrollToSection('Booking')">Bookings</button>
+          <button onclick="scrollToSection('Portfolio')">Portfolio</button>
+          <button onclick="scrollToSection('About')">About</button>
+          <button onclick="scrollToSection('Booking')">Bookings</button>
         </div>
-    </div>
+      </div>
+      
 
     <div class="main-container hidden">
 
-        <!-- Photo Slideshow -->
-        <div class="container">
-            <div class="photo-slideshow-container " id="Portfolio">
+        <!-- Photo Section -->
+        <div class="media-block">
+            <div class="photo-rectangle">
+            <div class="slideshow-wrapper photo-slideshow-container" id="Portfolio">
                 <button class="prev prev-photo">❮</button>
                 <button class="next next-photo">❯</button>
+                <!-- photo slides will be injected here by scripts.js -->
             </div>
-            <div class="additional-photo-rectangle">
-                <a href="view-all-photos.html" class="view-more-button">View All</a>
+            <a href="view-all-photos.html" class="view-more-button">View All</a>
+            </div>
+        </div>
+        
+        <!-- Video Section -->
+        <div class="media-block">
+            <div class="video-rectangle">
+            <div class="slideshow-wrapper video-slideshow-container">
+                <button class="prev prev-video">❮</button>
+                <button class="next next-video">❯</button>
+                <!-- video slides will be injected here by scripts.js -->
+            </div>
+            <a href="view-all-videos.html" class="view-more-button">View All</a>
             </div>
         </div>
 
-        <!-- Video Slideshow -->
-        <div class="container">
-            <div class="video-slideshow-container">
-                <!-- Video slides will be dynamically added here -->
-                <button class="prev prev-video">❮</button>
-                <button class="next next-video">❯</button>
-            </div>
-            <div class="additional-video-rectangle">
-                <a href="view-all-videos.html" class="view-more-button">View All</a> 
-            </div>
-        </div>
     </div>
 
     <!-- About Me Section -->
